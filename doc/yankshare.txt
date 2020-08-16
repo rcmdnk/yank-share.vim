@@ -26,46 +26,46 @@ Add the following mappings to your .vimrc.
 	xmap <silent> <Leader>y <Plug>(yankshare)
 
 
-- Yank (copy) and save in the |g:yankshare_file|:
+- Yank (copy) and save in the |g:yankshare_file|
 Normal mode:
-*<Plug>(yankshare)y*	The current line.
-*<Plug>(yankshare)yy*	The current line (same as above, but immediately).
-*<Plug>(yankshare)Y*	The current line (same as above, but immediately).
-*<Plug>(yankshare)y$*	The current position to the end of the line.
-*<Plug>(yankshare)y0*	The current position to the start of the line.
-*<Plug>(yankshare)yw*	The word.
+`<Plug>(yankshare)y`	The current line.
+`<Plug>(yankshare)yy`	The current line (same as above, but immediately).
+`<Plug>(yankshare)Y`	The current line (same as above, but immediately).
+`<Plug>(yankshare)y$`	The current position to the end of the line.
+`<Plug>(yankshare)y0`	The current position to the start of the line.
+`<Plug>(yankshare)yw`	The word.
 
 Visual mode:
-*<Plug>(yankshare)y*	The selected region.
+`<Plug>(yankshare)y`	The selected region.
 
 - Yank (copy), save in the |g:yankshare_file|, and enter insert mode:
 Normal mode:
-*<Plug>(yankshare)cc*	The current line.
-*<Plug>(yankshare)C*	The current position to the end of the line.
-*<Plug>(yankshare)c$*	The current position to the end of the line.
-*<Plug>(yankshare)c0*	The current position to the start of the line.
-*<Plug>(yankshare)cw*	The word.
+`<Plug>(yankshare)cc`	The current line.
+`<Plug>(yankshare)C`	The current position to the end of the line.
+`<Plug>(yankshare)c$`	The current position to the end of the line.
+`<Plug>(yankshare)c0`	The current position to the start of the line.
+`<Plug>(yankshare)cw`	The word.
 
 Visual mode:
-*<Plug>(yankshare)c*	The selected region.
+`<Plug>(yankshare)c`	The selected region.
 
 - Delete (cut), save in the |g:yankshare_file|
 Normal mode:
-*<Plug>(yankshare)dd*	The current line and enter insert mode.
-*<Plug>(yankshare)D*	The current position to the end of the line.
-*<Plug>(yankshare)d$*	The current position to the end of the line.
-*<Plug>(yankshare)d0*	The current position to the start of the line.
-*<Plug>(yankshare)dw*	The word.
+`<Plug>(yankshare)dd`	The current line and enter insert mode.
+`<Plug>(yankshare)D`	The current position to the end of the line.
+`<Plug>(yankshare)d$`	The current position to the end of the line.
+`<Plug>(yankshare)d0`	The current position to the start of the line.
+`<Plug>(yankshare)dw`	The word.
 
 Visual mode:
-*<Plug>(yankshare)d*	The selected region.
+`<Plug>(yankshare)d`	The selected region.
 
-- Paste from |g:yankshare_file|:
-*<Plug>(yankshare)p*	Put the text after the cursor.
-*<Plug>(yankshare)P*	Put the text before the cursor.
-*<Plug>(yankshare)gp*	Just like "p", but leave cursor just after the new
+- Paste from |g:yankshare_file|
+`<Plug>(yankshare)p`	Put the text after the cursor.
+`<Plug>(yankshare)P`	Put the text before the cursor.
+`<Plug>(yankshare)gp`	Just like "p", but leave cursor just after the new
 			text.
-*<Plug>(yankshare)gP*	Just like "P", but leave cursor just after the new
+`<Plug>(yankshare)gP`	Just like "P", but leave cursor just after the new
 			text.
 
 ==============================================================================
