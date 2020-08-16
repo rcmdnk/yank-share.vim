@@ -14,31 +14,35 @@ end
 
 let g:yankshare_register = get(g:, 'yankshare_register', 's')
 
-nnoremap <silent><Plug>(yankshare)y  "syy:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)yy "syy:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)Y  "sY:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)y$ "sy$:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)y0 "sy0:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)yw "syw:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)cc "scc<ESC>:call yankshare#store()<CR>i
-nnoremap <silent><Plug>(yankshare)C  "sC<ESC>:call yankshare#store()<CR>i
-nnoremap <silent><Plug>(yankshare)c$ "sc$<ESC>:call yankshare#store()<CR>i
-nnoremap <silent><Plug>(yankshare)c0 "sc0<ESC>:call yankshare#store()<CR>i
-nnoremap <silent><Plug>(yankshare)cw "scw<ESC>:call yankshare#store()<CR>i
-nnoremap <silent><Plug>(yankshare)dd "sdd:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)D  "sD:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)d$ "sd$:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)d0 "sd0:call yankshare#store()<CR>
-nnoremap <silent><Plug>(yankshare)dw "sdw:call yankshare#store()<CR>
+function! s:set_map(register)
+  execute "nnoremap <silent><Plug>(yankshare)y  \"" . a:register . "yy:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)yy \"" . a:register . "yy:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)Y  \"" . a:register . "Y:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)y$ \"" . a:register . "y$:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)y0 \"" . a:register . "y0:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)yw \"" . a:register . "yw:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)cc \"" . a:register . "cc<ESC>:call yankshare#store()<CR>i"
+  execute "nnoremap <silent><Plug>(yankshare)C  \"" . a:register . "C<ESC>:call yankshare#store()<CR>i"
+  execute "nnoremap <silent><Plug>(yankshare)c$ \"" . a:register . "c$<ESC>:call yankshare#store()<CR>i"
+  execute "nnoremap <silent><Plug>(yankshare)c0 \"" . a:register . "c0<ESC>:call yankshare#store()<CR>i"
+  execute "nnoremap <silent><Plug>(yankshare)cw \"" . a:register . "cw<ESC>:call yankshare#store()<CR>i"
+  execute "nnoremap <silent><Plug>(yankshare)dd \"" . a:register . "dd:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)D  \"" . a:register . "D:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)d$ \"" . a:register . "d$:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)d0 \"" . a:register . "d0:call yankshare#store()<CR>"
+  execute "nnoremap <silent><Plug>(yankshare)dw \"" . a:register . "dw:call yankshare#store()<CR>"
 
-xnoremap <silent><Plug>(yankshare)y "sy:call yankshare#store()<CR>
-xnoremap <silent><Plug>(yankshare)c "sc<ESC>:call yankshare#store()<CR>i
-xnoremap <silent><Plug>(yankshare)d "sd:call yankshare#store()<CR>
+  execute "xnoremap <silent><Plug>(yankshare)y  \"" . a:register . "y:call yankshare#store()<CR>"
+  execute "xnoremap <silent><Plug>(yankshare)c  \"" . a:register . "c<ESC>:call yankshare#store()<CR>i"
+  execute "xnoremap <silent><Plug>(yankshare)d  \"" . a:register . "d:call yankshare#store()<CR>"
 
-nnoremap <silent><Plug>(yankshare)p :call yankshare#load()<CR>"sp
-nnoremap <silent><Plug>(yankshare)P :call yankshare#load()<CR>"sP
-nnoremap <silent><Plug>(yankshare)gp :call yankshare#load()<CR>"sgp
-nnoremap <silent><Plug>(yankshare)gP :call yankshare#load()<CR>"sgP
+  execute "nnoremap <silent><Plug>(yankshare)p :call yankshare#load()<CR>\"" . a:register . "p"
+  execute "nnoremap <silent><Plug>(yankshare)P :call yankshare#load()<CR>\"" . a:register . "P"
+  execute "nnoremap <silent><Plug>(yankshare)gp :call yankshare#load()<CR>\"" . a:register . "gp"
+  execute "nnoremap <silent><Plug>(yankshare)gP :call yankshare#load()<CR>\"" . a:register . "gP"
+endfunction
+
+call s:set_map(g:yankshare_register)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
